@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PlayerCard from '../components/PlayerCard'
 
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import CardColumns from 'react-bootstrap/CardColumns'
 
 class PlayersContainer extends Component {
 
@@ -21,9 +20,9 @@ class PlayersContainer extends Component {
     render() {
         return (
             <Container>
-                <Row>
-                    <Col><PlayerCard info={this.cardProps} /></Col>
-                </Row>
+                <CardColumns>
+                  <PlayerCard info={this.cardProps} />
+                </CardColumns>
             </Container>
         )
     }

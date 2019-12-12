@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 class PlayerCard extends Component {
     render() {
         return (
-            <Container>
-                <Row><Col>{this.props.info.name}</Col></Row>
-                <Row><Col>{this.props.info.player_type}</Col></Row>
-                <Row><Col>{this.props.info.cost}</Col></Row>
-                <Row><Col>{this.props.info.movement_allowance}</Col></Row>
-                <Row><Col>{this.props.info.strength}</Col></Row>
-                <Row><Col>{this.props.info.agility}</Col></Row>
-                <Row><Col>{this.props.info.armour_value}</Col></Row>
-                <Row><Col>{this.props.info.skills}</Col></Row>
-            </Container>
+          <Card style={{ width: '18rem'}}>
+            <Card.Body>
+                <Card.Title>{this.props.info.name}</Card.Title>
+                <Card.Text>Player Type: {this.props.info.player_type}</Card.Text>
+                <Card.Text>Cost: {this.props.info.cost}</Card.Text>
+                <Card.Text>Movement Allowance: {this.props.info.movement_allowance}</Card.Text>
+                <Card.Text>Strength: {this.props.info.strength}</Card.Text>
+                <Card.Text>Agility: {this.props.info.agility}</Card.Text>
+                <Card.Text>Armour Value: {this.props.info.armour_value}</Card.Text>
+                <Card.Text>Skills: {this.props.info.skills}</Card.Text>
+            </Card.Body>
+        </Card>
         )
     }
 }
