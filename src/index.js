@@ -4,23 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-
-import teamsReducer from './reducers/TeamsReducer.js';
-import playersReducer from './reducers/PlayersReducer.js';
-import starplayersReducer from './reducers/StarPlayersReducer.js';
-
-const reducer = combineReducers({
-  teams:teamsReducer,
-  players:playersReducer,
-  star_players:starplayersReducer
-})
-
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
+import store from './store.js'
 
 ReactDOM.render(
   <Provider store={ store }>
