@@ -1,0 +1,2 @@
+class StarPlayer < ApplicationRecord
+end

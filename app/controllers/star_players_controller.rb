@@ -1,0 +1,2 @@
+class StarPlayersController < ApplicationController
+end
