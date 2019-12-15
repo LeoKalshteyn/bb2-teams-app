@@ -1,4 +1,4 @@
-export default function TeamsReducer(state = [], action) {
+export default function PlayersReducer(state = [], action) {
   switch (action.type) {
     default:
       return state;
