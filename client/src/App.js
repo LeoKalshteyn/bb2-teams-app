@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 
-import DataContainer from './containers/DataContainer'
+import ButtonsContainer  from './containers/ButtonsContainer';
 import TeamsContainer from './containers/TeamsContainer';
 import PlayersContainer from './containers/PlayersContainer';
-import ButtonsContainer  from './containers/ButtonsContainer';
+import StarPlayersContainer from './containers/StarPlayersContainer';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -15,8 +15,9 @@ function App() {
   return (
       <Router>
           <div className="App">
-            <DataContainer />
+            <Route path="/teams" component={TeamsContainer} />
             <Route path="/players" component={PlayersContainer} />
+            <Route path="/star players" component={StarPlayersContainer} />
             <Route exact path="/" component={ButtonsContainer} />
           </div>
       </Router>

@@ -4,10 +4,6 @@ import Button from 'react-bootstrap/Button'
 
 class SelectionButton extends Component {
 
-    handleClick = e => {
-        this.props.setDisplay(e.target.id)
-    };
-
     render() {
         const name = this.props.name.toLowerCase();
         return (
