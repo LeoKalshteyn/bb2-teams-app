@@ -6,6 +6,7 @@ import ButtonsContainer  from './containers/ButtonsContainer';
 import TeamsContainer from './containers/TeamsContainer';
 import PlayersContainer from './containers/PlayersContainer';
 import StarPlayersContainer from './containers/StarPlayersContainer';
+import TeamDisplay from "./components/TeamDisplay";
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -15,9 +16,10 @@ function App() {
   return (
       <Router>
           <div className="App">
-            <Route path="/teams" component={TeamsContainer} />
-            <Route path="/players" component={PlayersContainer} />
-            <Route path="/star players" component={StarPlayersContainer} />
+            <Route path="/teams/:id" component={TeamDisplay} />
+            <Route exact path="/teams" component={TeamsContainer} />
+            <Route exact path="/players" component={PlayersContainer} />
+            <Route exact path="/star players" component={StarPlayersContainer} />
             <Route exact path="/" component={ButtonsContainer} />
           </div>
       </Router>

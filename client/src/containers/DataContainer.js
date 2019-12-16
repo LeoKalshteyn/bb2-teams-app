@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchTeams } from "../actions/teamActions";
+
 import TeamCard from '../components/TeamCard'
 
 import Container from 'react-bootstrap/Container'
@@ -11,19 +14,12 @@ class DataContainer extends Component {
   };
 
   componentDidMount() {
-      fetch('/teams')
-          .then(res => res.json())
-          .then(data => {
-              this.setState({
-                  cards: data
-              })
-          })
-
+     this.props.fetchTeams()
   }
 
   displayCards = () => {
-      if(this.state.cards.length > 0) {
-          return (this.state.cards.map(card => (
+      if(this.props.cards.length > 0) {
+          return (this.props.cards.map(card => (
               <TeamCard key={card.id} info={card} />
           )))
       }
@@ -43,4 +39,17 @@ class DataContainer extends Component {
      }
   }
 
-export default DataContainer
+  const mapStateToProps = state => {
+      return {
+          cards: state.cards,
+          loading: state.loading
+      }
+  };
+
+  const mapDispatchToProps = dispatch => {
+      return {
+          fetchTeams: () => dispatch(fetchTeams())
+      }
+  };
+
+  export default connect(mapStateToProps, mapDispatchToProps)(DataContainer)
