@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 
-import TeamsContainer from './containers/TeamsContainer'
+import DataContainer from './containers/DataContainer'
+import TeamsContainer from './containers/TeamsContainer';
 import PlayersContainer from './containers/PlayersContainer';
 import ButtonsContainer  from './containers/ButtonsContainer';
 
@@ -14,7 +15,8 @@ function App() {
   return (
       <Router>
           <div className="App">
-            <TeamsContainer />
+            <DataContainer />
+            <Route path="/players" component={PlayersContainer} />
             <Route exact path="/" component={ButtonsContainer} />
           </div>
       </Router>

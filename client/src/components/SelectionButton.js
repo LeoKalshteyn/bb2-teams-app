@@ -9,8 +9,9 @@ class SelectionButton extends Component {
     };
 
     render() {
+        const name = this.props.name.toLowerCase();
         return (
-            <Button onClick={this.handleClick} id={this.props.name.toLowerCase()}>{this.props.name}</Button>
+            <Button href={`/${name}`} id={name}>{this.props.name}</Button>
         )
     }
 }
