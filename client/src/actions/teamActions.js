@@ -6,4 +6,4 @@ export const fetchTeams = () => {
             .then(responseJSON => { dispatch({ type: 'ADD_TEAMS', cards: responseJSON})
             })
     }
-} 
+}

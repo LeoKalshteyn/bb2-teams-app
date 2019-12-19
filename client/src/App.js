@@ -31,7 +31,31 @@ const App = props => {
                         <NavButtonsContainer />
                     </Row>
                     <Row>
-                        <DataContainer />
+                        <DataContainer path="teams" />
+                    </Row>
+                </Route>
+
+                <Route path="/players">
+                    <Row>
+                        <Col><TeamFilter /></Col>
+                    </Row>
+                    <Row>
+                        <NavButtonsContainer />
+                    </Row>
+                    <Row>
+                        <DataContainer path="player" />
+                    </Row>
+                </Route>
+
+                <Route path="/trinkets">
+                    <Row>
+                        <Col><TeamFilter /></Col>
+                    </Row>
+                    <Row>
+                        <NavButtonsContainer />
+                    </Row>
+                    <Row>
+                        <DataContainer path="star player" />
                     </Row>
                 </Route>
 

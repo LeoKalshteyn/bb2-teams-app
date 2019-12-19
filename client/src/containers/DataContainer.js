@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTeams } from "../actions/teamActions";
+import { fetchCards  } from "../actions/dataActions";
 import { NavLink } from 'react-router-dom';
 
 import TeamCard from '../components/TeamCard'
@@ -10,21 +10,26 @@ import CardColumns from 'react-bootstrap/CardColumns'
 class DataContainer extends Component {
 
   state = {
-      cards: []
+      cards: {
+          teams: [],
+          players: [],
+          star_players: []
+      }
   };
 
   componentDidMount() {
-     this.props.fetchTeams()
+     this.props.fetchCards(this.props.path)
   }
 
   displayCards = () => {
-      if(this.props.cards.length > 0) {
-          return (this.props.cards.map(card => (
-              <NavLink to="/teams/1" key={card.id}><TeamCard view={this.props.displayPiece} info={card} /></NavLink>
-          )))
-      }
-      else {
-          return (<div>Empty</div>)
+      switch(this.props.path) {
+          case "teams":
+              return (this.props.cards.teams.map(card => (
+                  <NavLink style={{ color: "black" }} to={`/teams/${card.id}`} key={card.id}><TeamCard view={this.props.displayTeams} info={card} /></NavLink>
+              )));
+
+          default:
+              return (<div>Empty</div>)
       }
   };
 
@@ -46,8 +51,8 @@ class DataContainer extends Component {
 
   const mapDispatchToProps = dispatch => {
       return {
-          fetchTeams: () => dispatch(fetchTeams()),
-          displayPiece: id => dispatch({ type: 'DISPLAY_PIECE', id })
+          fetchCards: path => dispatch(fetchCards(path)),
+          displayTeams: id => dispatch({ type: 'DISPLAY_TEAMS', id })
       }
   };
 
