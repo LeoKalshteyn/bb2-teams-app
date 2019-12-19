@@ -2,28 +2,53 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 
-import ButtonsContainer  from './containers/ButtonsContainer';
-import TeamsContainer from './containers/TeamsContainer';
-import PlayersContainer from './containers/PlayersContainer';
-import StarPlayersContainer from './containers/StarPlayersContainer';
+import NavButtonsContainer  from './containers/NavButtonsContainer';
 import TeamDisplay from "./components/TeamDisplay";
+import DataContainer from "./containers/DataContainer";
+import TeamFilter from "./components/TeamFilter";
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
-function App() {
+const App = props => {
   return (
-      <Router>
-          <div className="App">
-            <Route path="/teams/:id" component={TeamDisplay} />
-            <Route exact path="/teams" component={TeamsContainer} />
-            <Route exact path="/players" component={PlayersContainer} />
-            <Route exact path="/star players" component={StarPlayersContainer} />
-            <Route exact path="/" component={ButtonsContainer} />
-          </div>
-      </Router>
-  );
-}
+    <Container>
+        <Router>
+            <Switch>
+                <Route path="/teams/:id">
+                    <TeamDisplay info={props.info} />
+                </Route>
 
-export default connect()(App);
+                <Route path="/teams">
+                    <Row>
+                        <Col><TeamFilter /></Col>
+                    </Row>
+                    <Row>
+                        <NavButtonsContainer />
+                    </Row>
+                    <Row>
+                        <DataContainer />
+                    </Row>
+                </Route>
+
+                <Route path="/">
+                    <NavButtonsContainer />
+                </Route>
+            </Switch>
+        </Router>
+    </Container>
+  );
+
+};
+
+const mapStateToProps = state => {
+    return {
+        info: state.piece
+    }
+};
+
+export default connect(mapStateToProps)(App);

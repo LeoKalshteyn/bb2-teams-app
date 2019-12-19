@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 class TeamCard extends Component {
 
     handleClick = () => {
-      window.location = '/teams/1'
+      this.props.view(this.props.info.id);
     };
 
     render() {

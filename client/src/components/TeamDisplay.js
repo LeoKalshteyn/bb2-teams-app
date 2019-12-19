@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TeamDisplay extends Component {
-    render() {
-        return (
-            <div>TeamDisplay</div>
-        )
-    }
-}
+const TeamDisplay = props => {
+    const info = props.info;
+    return (
+        <div>
+            <h1>{info.name}</h1>
+        </div>
+    )
+};
 
-export default TeamDisplay 
+export default TeamDisplay

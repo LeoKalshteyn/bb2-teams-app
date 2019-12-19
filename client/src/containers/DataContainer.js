@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTeams } from "../actions/teamActions";
+import { NavLink } from 'react-router-dom';
 
 import TeamCard from '../components/TeamCard'
 
-import Container from 'react-bootstrap/Container'
 import CardColumns from 'react-bootstrap/CardColumns'
 
 class DataContainer extends Component {
@@ -20,7 +20,7 @@ class DataContainer extends Component {
   displayCards = () => {
       if(this.props.cards.length > 0) {
           return (this.props.cards.map(card => (
-              <TeamCard key={card.id} info={card} />
+              <NavLink to="/teams/1" key={card.id}><TeamCard view={this.props.displayPiece} info={card} /></NavLink>
           )))
       }
       else {
@@ -30,11 +30,9 @@ class DataContainer extends Component {
 
   render() {
       return (
-          <Container>
-              <CardColumns>
-                {this.displayCards()}
-              </CardColumns>
-          </Container>
+          <CardColumns>
+              {this.displayCards()}
+          </CardColumns>
         )
      }
   }
@@ -48,7 +46,8 @@ class DataContainer extends Component {
 
   const mapDispatchToProps = dispatch => {
       return {
-          fetchTeams: () => dispatch(fetchTeams())
+          fetchTeams: () => dispatch(fetchTeams()),
+          displayPiece: id => dispatch({ type: 'DISPLAY_PIECE', id })
       }
   };
 

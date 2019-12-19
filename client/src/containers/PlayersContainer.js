@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ButtonsContainer from "./ButtonsContainer";
+import NavButtonsContainer from "./NavButtonsContainer";
 import DataContainer from "./DataContainer";
 
 class PlayersContainer extends Component {
@@ -7,7 +7,7 @@ class PlayersContainer extends Component {
     render() {
         return (
             <div>
-                <ButtonsContainer />
+                <NavButtonsContainer />
                 <DataContainer />
             </div>
         )
