@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchCards } from ".././actions/dataActions";
 
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -8,6 +10,10 @@ class TeamFilter extends Component {
     state = {
         team: 'Select Team'
     };
+
+    componentDidMount() {
+        this.props.fetchCards(this.props.path)
+    }
 
     handleTeamSelection = e => {
         this.setState({
@@ -29,4 +35,10 @@ class TeamFilter extends Component {
       }
     }
 
-export default TeamFilter
+const mapDispatchToProps = dispatch => {
+        return {
+            fetchCards: path => dispatch(fetchCards(path))
+        }
+    };
+
+export default connect(null, mapDispatchToProps)(TeamFilter)
