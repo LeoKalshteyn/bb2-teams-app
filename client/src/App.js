@@ -43,11 +43,11 @@ const App = props => {
                         <NavButtonsContainer />
                     </Row>
                     <Row>
-                        <DataContainer path="player" />
+                        <DataContainer path="players" />
                     </Row>
                 </Route>
 
-                <Route path="/trinkets">
+                <Route path="/star_players">
                     <Row>
                         <Col><TeamFilter /></Col>
                     </Row>
@@ -55,7 +55,7 @@ const App = props => {
                         <NavButtonsContainer />
                     </Row>
                     <Row>
-                        <DataContainer path="star player" />
+                        <DataContainer path="star_players" />
                     </Row>
                 </Route>
 

@@ -13,10 +13,10 @@ StarPlayer.destroy_all
 puts "Working"
 
 t1 = Team.create(name: "Chaos", image: "http://www.bloodbowl-game.com/img/game-bb2/races/chaos/scr01.jpg")
-t1 = Team.create(name: "Orcs", image: "http://www.bloodbowl-game.com/img/game-bb2/races/orcs/scr01.jpg")
-t1 = Team.create(name: "High Elves", image: "http://www.bloodbowl-game.com/img/game-bb2/races/highelves/scr01.jpg")
+t2 = Team.create(name: "Orcs", image: "http://www.bloodbowl-game.com/img/game-bb2/races/orcs/scr01.jpg")
+t3 = Team.create(name: "High Elves", image: "http://www.bloodbowl-game.com/img/game-bb2/races/highelves/scr01.jpg")
 
 p1 = Player.create(name: "Beastman", player_type: "Lineman", cost: "70k", movement_allowance: "5", agility: "3", strength: "3", armour_value: "4", skills: "Horns", team_id: 1)
 
 
-p1 = StarPlayer.create(name: "Elf", player_type: "Lineman", cost: "70k", movement_allowance: "5", agility: "4", strength: "3", armour_value: "4", skills: "Block", team_id: 1)
+sp1 = StarPlayer.create(name: "Elf", player_type: "Lineman", cost: "70k", movement_allowance: "5", agility: "4", strength: "3", armour_value: "4", skills: "Block", team_id: 1)

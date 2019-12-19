@@ -17,7 +17,7 @@ export default function DataReducer(state = {
             return {
                 ...state,
                 cards: {
-                    ...state,
+                    ...state.cards,
                     teams: action.cards
                 },
                 loading: false
@@ -27,6 +27,28 @@ export default function DataReducer(state = {
             return {
                 ...state,
                 piece: state.cards.teams.find(card => action.id === card.id)
+            };
+
+        case 'LOADING_PLAYERS':
+            return {
+                ...state,
+                loading: true
+            };
+
+        case 'ADD_PLAYERS':
+            return {
+                ...state,
+                cards: {
+                    ...state.cards,
+                    players: action.cards
+                },
+                loading: false
+            };
+
+        case 'DISPLAY_PLAYERS':
+            return {
+                ...state,
+                piece: state.cards.players.find(card => action.id === card.id)
             };
 
         default:

@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Card from 'react-bootstrap/Card'
 
-class PlayerCard extends Component {
-    render() {
-        return (
-          <Card style={{ width: '18rem'}}>
+const PlayerCard = props => {
+
+    const handleClick = () => {
+      props.view(props.info.id, 'DISPLAY_PLAYERS');
+  };
+
+    return (
+        <Card onClick={handleClick} style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>{this.props.info.name}</Card.Title>
                 <Card.Text>Player Type: {this.props.info.player_type}</Card.Text>
@@ -17,8 +21,7 @@ class PlayerCard extends Component {
                 <Card.Text>Skills: {this.props.info.skills}</Card.Text>
             </Card.Body>
         </Card>
-        )
-    }
-}
+    )
+};
 
 export default PlayerCard

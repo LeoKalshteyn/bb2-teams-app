@@ -19,7 +19,7 @@ class TeamFilter extends Component {
         console.log(this.state);
         return (
           <DropdownButton id="dropdown-team-button" title={this.state.team}>
-              {['Chaos', 'High Elf', 'Orcs'].map(cls => (
+              {['Chaos', 'High Elves', 'Orcs'].map(cls => (
                   <div key={cls}>
                       <Dropdown.Item onClick={this.handleTeamSelection} title={cls}>{cls}</Dropdown.Item>
                   </div>

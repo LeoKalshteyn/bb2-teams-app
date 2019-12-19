@@ -5,11 +5,11 @@ import Card from 'react-bootstrap/Card'
 const TeamCard = props => {
 
     const handleClick = () => {
-        props.view(props.info.id);
+        props.view(props.info.id, 'DISPLAY_TEAMS');
     };
 
     return (
-        <Card onClick={this.handleClick} style={{ width: '18rem', cursor: 'pointer' }}>
+        <Card onClick={handleClick} style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>{this.props.info.name}</Card.Title>
             </Card.Body>
