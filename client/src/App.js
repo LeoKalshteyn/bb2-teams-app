@@ -36,7 +36,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/">
-                    <NavButtonsContainer />
+                    <TeamFilter />
                 </Route>
             </Switch>
         </Router>
