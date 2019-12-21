@@ -61,6 +61,7 @@ const App = props => {
 
                 <Route path="/">
                     <TeamFilter path="teams" />
+                    <DataContainer path="teams" />
                 </Route>
             </Switch>
         </Router>

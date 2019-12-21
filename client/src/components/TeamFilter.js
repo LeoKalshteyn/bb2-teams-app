@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCards } from ".././actions/dataActions";
+import { fetchCards, fetchTeams } from ".././actions/dataActions";
 
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -11,14 +11,12 @@ class TeamFilter extends Component {
         team: 'Select Team'
     };
 
-    componentDidMount() {
-        this.props.fetchCards(this.props.path)
-    }
 
     handleTeamSelection = e => {
         this.setState({
             team: e.target.title
-        })
+        });
+        this.props.fetchTeams(e.target.title)
     };
 
     render() {
@@ -37,7 +35,8 @@ class TeamFilter extends Component {
 
 const mapDispatchToProps = dispatch => {
         return {
-            fetchCards: path => dispatch(fetchCards(path))
+            fetchCards: path => dispatch(fetchCards(path)),
+            fetchTeams: params => dispatch(fetchTeams(params))
         }
     };
 

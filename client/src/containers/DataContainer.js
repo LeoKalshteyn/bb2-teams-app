@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCards  } from "../actions/dataActions";
 import { NavLink } from 'react-router-dom';
 
 import TeamCard from '../components/TeamCard'
@@ -9,18 +8,6 @@ import PlayerCard from '../components/PlayerCard';
 import CardColumns from 'react-bootstrap/CardColumns'
 
 class DataContainer extends Component {
-
-  state = {
-      cards: {
-          teams: [],
-          players: [],
-          star_players: []
-      }
-  };
-
-  componentDidMount() {
-     this.props.fetchCards(this.props.path)
-  }
 
   displayCards = () => {
       switch(this.props.path) {
@@ -57,7 +44,6 @@ class DataContainer extends Component {
 
   const mapDispatchToProps = dispatch => {
       return {
-          fetchCards: path => dispatch(fetchCards(path)),
           displayPiece: (id, type) => dispatch({ type, id })
       }
   };
