@@ -60,8 +60,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/">
-                    <TeamFilter path="teams" />
-                    <DataContainer path="teams" />
+                       <NavButtonsContainer />
                 </Route>
             </Switch>
         </Router>

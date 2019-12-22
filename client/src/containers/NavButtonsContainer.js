@@ -11,6 +11,7 @@ class NavButtonsContainer extends Component {
         return (
             <Container>
                 <Row>
+                    <Col><SelectionButton name="Teams" /></Col>
                     <Col><SelectionButton name="Players" /></Col>
                     <Col><SelectionButton name="Star Players" /></Col>
                 </Row>

@@ -6,6 +6,14 @@ class TeamsController < ApplicationController
     render json: @teams, only: [:name, :image], status: 200
   end
 
+  def search
+    render status: 200, json: Team.where("team_name = ?", params["name"])
+  end
+
+  def specific
+    render status: 200, json: Team.where("name LIKE ?", "%#{params[:term]}")
+  end
+
   def show
     render json: @team, status: 200
   end

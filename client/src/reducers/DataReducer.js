@@ -29,6 +29,12 @@ export default function DataReducer(state = {
                 piece: state.cards.teams.find(card => action.id === card.id)
             };
 
+        case 'SET_TEAM':
+            return {
+                ...state,
+                team_name: action.team_name
+            };
+
         case 'LOADING_PLAYERS':
             return {
                 ...state,
