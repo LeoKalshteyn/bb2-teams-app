@@ -4,6 +4,7 @@ export default function DataReducer(state = {
         players: [],
         star_players: []
     },
+    team_name: "Select Team",
     loading: false
 }, action) {
     switch (action.type) {
@@ -26,7 +27,8 @@ export default function DataReducer(state = {
         case 'DISPLAY_TEAMS':
             return {
                 ...state,
-                piece: state.cards.teams.find(card => action.id === card.id)
+                piece: action.piece,
+                loading: false
             };
 
         case 'SET_TEAM':

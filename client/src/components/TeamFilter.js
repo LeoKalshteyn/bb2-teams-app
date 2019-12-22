@@ -31,10 +31,6 @@ class TeamFilter extends Component {
       }
     }
 
-    TeamFilter.defaultProps = {
-        team_name: "Select Team"
-    };
-
     const mapStateToProps = state => {
         return {
             team_name: state.team_name

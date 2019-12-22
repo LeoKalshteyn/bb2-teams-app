@@ -19,12 +19,20 @@ export const fetchTeams = () => {
     }
 };
 
-  export const searchTeams = term => {
-      return dispatch => {
-          dispatch({ type: "LOADING_TEAMS"});
-          fetch(`/api/specific?term=${term}`)
-              .then(res => res.json())
-              .then(responseJSON => { dispatch ({ type: "ADD_TEAMS", card: responseJSON})
-              })
-      }
+export const displayPiece = (id, category, type) => {
+    return dispatch => {
+        dispatch({ type: "LOADING_TEAMS"});
+        const data = { id };
+        fetch(`/api/${category}/update`, {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(responseJSON => { dispatch({ type , piece: responseJSON})
+            })
+    }
 };

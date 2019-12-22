@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import TeamCard from '../components/TeamCard'
 import PlayerCard from '../components/PlayerCard';
+import { displayPiece } from "../actions/dataActions"
 
 import CardColumns from 'react-bootstrap/CardColumns'
 
@@ -44,7 +45,7 @@ class DataContainer extends Component {
 
   const mapDispatchToProps = dispatch => {
       return {
-          displayPiece: (id, type) => dispatch({ type, id })
+          displayPiece: (id, category, type) => dispatch(displayPiece(id, category, type))
       }
   };
 

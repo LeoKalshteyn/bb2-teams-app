@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   scope '/api' do
     get :teams, to: 'teams#index'
     get :search, to: 'teams#search'
+    post "teams/update", to: 'teams#update'
 
     get :players, to: 'players#index'
   end
