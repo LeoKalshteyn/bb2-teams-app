@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Card from 'react-bootstrap/Card'
 
-const TeamCard = props => {
+class TeamCard extends Component {
 
-    const handleClick = () => {
-        props.view(props.info.id, "teams", 'DISPLAY_TEAMS');
+    handleClick = () => {
+      this.props.view(this.props.info.id);
     };
 
-    return (
-        <Card onClick={handleClick} style={{ width: '18rem' }}>
-            <Card.Body>
-                <Card.Title>{props.info.name}</Card.Title>
-            </Card.Body>
-            <Card.Img variant="bottom" src={this.props.info.image} />
-        </Card>
-    )
+    render() {
+        return (
+            <Card onClick={this.handleClick} style={{ width: '18rem', cursor: 'pointer' }}>
+                <Card.Body>
+                    <Card.Title>{this.props.info.name}</Card.Title>
+                </Card.Body>
+                <Card.Img variant="bottom" src={this.props.info.image} />
+            </Card>
+        )
+    }
 }
 
 export default TeamCard

@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   scope '/api' do
-    get :teams, to: 'teams#index'
-    get :search, to: 'teams#search'
-    post "teams/update", to: 'teams#update'
-
-    get :players, to: 'players#index'
+    resources :teams do
+      resources :players
+      resources :star_players
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
