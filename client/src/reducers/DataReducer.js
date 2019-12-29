@@ -56,7 +56,8 @@ export default function DataReducer(state = {
         case 'DISPLAY_PLAYERS':
             return {
                 ...state,
-                piece: state.cards.players.find(card => action.id === card.id)
+                piece: action.piece,
+                loading: false
             };
 
         default:

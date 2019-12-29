@@ -3,9 +3,13 @@ import './App.css';
 import { connect } from 'react-redux'
 
 import NavButtonsContainer  from './containers/NavButtonsContainer';
-import TeamDisplay from "./components/TeamDisplay";
 import DataContainer from "./containers/DataContainer";
+
+import TeamDisplay from "./components/TeamDisplay";
 import TeamFilter from "./components/TeamFilter";
+
+import PlayerDisplay from "./components/PlayerDisplay";
+import PlayerFilter from "./components/PlayerFilter";
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -23,6 +27,10 @@ const App = props => {
                     <TeamDisplay info={props.info} />
                 </Route>
 
+                <Route path="/players/:id">
+                    <PlayerDisplay info={props.info} />
+                </Route>
+
                 <Route path="/teams">
                     <Row>
                         <Col><TeamFilter path="teams" /></Col>
@@ -36,6 +44,9 @@ const App = props => {
                 </Route>
 
                 <Route path="/players">
+                    <Row>
+                        <Col><PlayerFilter path="players" /></Col>
+                    </Row>
                     <Row>
                         <NavButtonsContainer />
                     </Row>

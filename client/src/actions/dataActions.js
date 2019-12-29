@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const fetchCards = path => {
     const upperPath = path.toUpperCase();
     return (dispatch) => {
@@ -15,6 +17,17 @@ export const fetchTeams = () => {
         fetch(`/api/teams`)
             .then(res => res.json())
             .then(responseJSON => { dispatch({ type: 'ADD_TEAMS', cards: responseJSON})
+            })
+    }
+};
+
+export const fetchPlayers = params => {
+    return dispatch => {
+        dispatch({ type: 'LOADING_PLAYERS' });
+        let url = '/api/players/search?' + $.param({ team: params.team });
+        fetch(url)
+            .then(res => res.json())
+            .then(responseJSON => { dispatch({ type: 'ADD_PLAYERS', cards: responseJSON})
             })
     }
 };
