@@ -1,4 +1,4 @@
-export default function AzeriteReducer(state = {
+export default function TeamsReducer(state = {
     cards: [],
     loading: false
 }, action) {

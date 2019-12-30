@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import DataReducer from './reducers/DataReducer';
-import TeamsReducer from './reducers/TeamsReducer';
 import thunk from 'redux-thunk';
+
+import TeamsReducer from './reducers/TeamsReducer';
+import PlayersReducer from './reducers/PlayersReducer';
 
 import { Provider } from 'react-redux';
 import {applyMiddleware, createStore, compose, combineReducers } from 'redux';
 
-const rootReducer = combineReducers({ teams: TeamsReducer })
+const rootReducer = combineReducers({ teams: TeamsReducer, players: PlayersReducer });
 const store = createStore(rootReducer, compose(
 
     applyMiddleware(thunk),
