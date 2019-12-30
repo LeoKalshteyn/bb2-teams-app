@@ -28,12 +28,6 @@ class PlayerFilter extends Component {
         this.props.fetchPlayers({ team: e.target.title })
     };
 
-    teamFetchButton = e => {
-        this.props.setTeam(e.target.title);
-        this.props.fetchTeams(e.target.title)
-    };
-
-
     render() {
         return (
             <Container>
@@ -41,7 +35,7 @@ class PlayerFilter extends Component {
                     <DropdownButton id="dropdown-player-button" title={this.props.team}>
                           {this.state.data.map(team => (
                             <div key={team}>
-                                <Dropdown.Item onClick={this.teamFetchButton} title={team}>{team}</Dropdown.Item>
+                                <Dropdown.Item onClick={this.handleTeamSelection} title={team}>{team}</Dropdown.Item>
                             </div>
                         ))}
                     </DropdownButton>
@@ -65,4 +59,5 @@ const mapDispatchToProps = dispatch => {
 
     }
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerFilter)

@@ -13,12 +13,12 @@ class DataContainer extends Component {
   displayCards = () => {
       switch(this.props.path) {
           case "teams":
-              return (this.props.cards.teams.map(card => (
+              return (this.props.teams.cards.map(card => (
                   <NavLink style={{ color: "black" }} to={`/teams/${card.id}`} key={card.id}><TeamCard view={this.props.displayPiece} info={card} /></NavLink>
               )));
 
           case "players":
-              return (this.props.cards.players.map(card => (
+              return (this.props.players.cards.map(card => (
                   <NavLink style={{ color: "black" }} to={`/players/${card.id}`} key={card.id}><PlayerCard view={this.props.displayPiece} info={card} /></NavLink>
               )));
 
@@ -38,8 +38,8 @@ class DataContainer extends Component {
 
   const mapStateToProps = state => {
       return {
-          cards: state.cards,
-          loading: state.loading
+          teams: state.teams,
+          players: state.players
       }
   };
 

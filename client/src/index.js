@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import DataReducer from './reducers/DataReducer';
+import TeamsReducer from './reducers/TeamsReducer';
 import thunk from 'redux-thunk';
 
 import { Provider } from 'react-redux';
-import {applyMiddleware, createStore, compose} from 'redux';
+import {applyMiddleware, createStore, compose, combineReducers } from 'redux';
 
-const store = createStore(DataReducer, compose(
+const rootReducer = combineReducers({ teams: TeamsReducer })
+const store = createStore(rootReducer, compose(
+
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )

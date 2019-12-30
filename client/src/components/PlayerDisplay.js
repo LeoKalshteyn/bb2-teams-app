@@ -2,7 +2,6 @@ import React from 'react';
 
 const PlayerDisplay = props => {
     const info = props.info
-    console.log(props)
 
     if (info) {
         return (

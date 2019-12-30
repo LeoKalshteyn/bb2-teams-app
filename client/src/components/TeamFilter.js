@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCards, fetchTeams } from ".././actions/dataActions";
+import { fetchTeams } from ".././actions/dataActions";
 import Button from 'react-bootstrap/Button'
 
 
@@ -37,7 +37,6 @@ class TeamFilter extends Component {
 
 const mapDispatchToProps = dispatch => {
         return {
-            fetchCards: path => dispatch(fetchCards(path)),
             fetchTeams: params => dispatch(fetchTeams(params)),
         }
     };
