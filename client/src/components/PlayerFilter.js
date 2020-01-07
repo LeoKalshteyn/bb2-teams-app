@@ -25,7 +25,7 @@ class PlayerFilter extends Component {
 
     handleTeamSelection = e => {
         this.props.setTeam(e.target.title);
-        this.props.fetchPlayers({ team: e.target.title })
+        this.props.fetchPlayers()
     };
 
     render() {
@@ -35,7 +35,7 @@ class PlayerFilter extends Component {
                     <DropdownButton id="dropdown-player-button" title={this.props.team}>
                           {this.state.data.map(team => (
                             <div key={team}>
-                                <Dropdown.Item onClick={this.handleTeamSelection} title={team}>{team}</Dropdown.Item>
+                                <Dropdown.Item onClick={this.handleTeamSelection} title={team.name}>{team.name}</Dropdown.Item>
                             </div>
                         ))}
                     </DropdownButton>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTeams } from ".././actions/dataActions";
-import Button from 'react-bootstrap/Button'
 
 
 class TeamFilter extends Component {

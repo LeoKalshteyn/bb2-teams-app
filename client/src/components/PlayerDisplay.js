@@ -10,6 +10,7 @@ const PlayerDisplay = props => {
             </div>
         )
     }
+
     else {
         return (
             <div>Loading</div>

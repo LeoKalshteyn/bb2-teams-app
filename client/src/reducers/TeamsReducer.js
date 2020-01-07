@@ -19,7 +19,7 @@ export default function TeamsReducer(state = {
         case 'DISPLAY_TEAMS':
             return {
                 ...state,
-                piece: action.piece,
+                piece: state.cards.teams.find(card => action.id === card.id),
                 loading: false
             };
 

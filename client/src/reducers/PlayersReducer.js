@@ -1,7 +1,7 @@
 export default function PlayersReducer(state = {
     cards: [],
     loading: false,
-    team: "Team"
+    team: "Select Team"
 }, action) {
     switch (action.type) {
         case 'LOADING_PLAYERS':
@@ -27,7 +27,7 @@ export default function PlayersReducer(state = {
         case 'SET_TEAM':
             return {
                 ...state,
-                role: action.role
+                team: action.team
             };
 
         default:

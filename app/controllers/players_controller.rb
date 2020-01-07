@@ -3,16 +3,12 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
-    render json: @players, only: [:name, :player_type, :cost, :movement_allowance, :strength, :agility, :armour_value, :skills], status: 200
+    render json: @players, status: 200
   end
 
   def show
-    render json: @player, status: 200
-  end
-
-  def create
-    @player = Player.create(player_params)
-    render json: PlayerSerializer.new(@player), status: :created
+    @players = Player.all
+    render json: @players, status: 200
   end
 
   private
