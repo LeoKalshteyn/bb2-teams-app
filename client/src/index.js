@@ -12,7 +12,7 @@ import StarPlayersReducer from './reducers/StarPlayersReducer';
 import { Provider } from 'react-redux';
 import {applyMiddleware, createStore, compose, combineReducers } from 'redux';
 
-const rootReducer = combineReducers({ teams: TeamsReducer, players: PlayersReducer });
+const rootReducer = combineReducers({ teams: TeamsReducer, players: PlayersReducer, star_players: StarPlayersReducer });
 const store = createStore(rootReducer, compose(
 
     applyMiddleware(thunk),

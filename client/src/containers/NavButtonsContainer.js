@@ -13,7 +13,7 @@ class NavButtonsContainer extends Component {
                 <Row>
                     <Col><SelectionButton name="Teams" /></Col>
                     <Col><SelectionButton name="Players" /></Col>
-                    <Col><SelectionButton name="Star Players" /></Col>
+                    <Col><SelectionButton name="Star_Players" /></Col>
                 </Row>
             </Container>
         )

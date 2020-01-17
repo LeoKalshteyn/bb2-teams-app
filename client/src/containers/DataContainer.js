@@ -22,8 +22,8 @@ class DataContainer extends Component {
                   <NavLink style={{ color: "black" }} to={`/players/${card.id}`} key={card.id}><PlayerCard info={card} /></NavLink>
               )));
 
-          case "star players":
-              return (this.props.players.cards.map(card => (
+          case "star_players":
+              return (this.props.star_players.cards.map(card => (
                   <NavLink style={{ color: "black" }} to={`/star_players/${card.id}`} key={card.id}><StarPlayerCard info={card} /></NavLink>
               )));
 
@@ -44,7 +44,7 @@ class DataContainer extends Component {
   const mapStateToProps = state => {
       return {
           teams: state.teams,
-          players: state.players
+          players: state.players,
           star_players: state.star_players
       }
   };
