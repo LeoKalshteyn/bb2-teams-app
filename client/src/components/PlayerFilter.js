@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchPlayers, fetchTeams } from ".././actions/dataActions";
 
 import Row from "react-bootstrap/Row";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Container from "react-bootstrap/Container";
 
@@ -27,7 +26,7 @@ class PlayerFilter extends Component {
         e.preventDefault();
         const { target: { title, team }} = e;
         this.props.setTeam(title);
-        this.props.fetchPlayers(title); // This is what I'm not sure about, but I'll get to that later
+        this.props.fetchPlayers(title);
         console.log(title, team, e.target.dataset.team)
         this.setState({ currentTeam: e.target.dataset.team });
     };
