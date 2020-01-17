@@ -9,12 +9,12 @@ export const fetchTeams = () => {
     }
 };
 
-export const fetchPlayers = params => {
+export const fetchPlayers = teamId => {
     return dispatch => {
         dispatch({ type: 'LOADING_PLAYERS' });
-        fetch(`/api/teams/:id/players`)
-            .then(res => res.json())
-            .then(responseJSON => { dispatch({ type: 'ADD_PLAYERS', cards: responseJSON})
+        fetch(`/api/teams/${teamId}/players`) // interpolate id into path string
+          .then(res => res.json())
+          .then(responseJSON => { dispatch({ type: 'ADD_PLAYERS', cards: responseJSON});
             })
     }
 };

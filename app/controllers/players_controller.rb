@@ -2,13 +2,12 @@ class PlayersController < ApplicationController
   before_action :set_params, only: [:show]
 
   def index
-    @players = Player.all
+    @players = Team.find(params[:team_id]).players
     render json: @players, status: 200
   end
 
   def show
-    @players = Player.all
-    render json: @players, status: 200
+    render json: @player, status: 200
   end
 
   private

@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 class PlayerFilter extends Component {
   constructor() {
       super();
-      this.state = { data: [] };
+      this.state = { data: [], currentTeam: 'Select Team' };
     }
 
     async fetchButtonTeams() {
@@ -24,21 +24,30 @@ class PlayerFilter extends Component {
     }
 
     handleTeamSelection = e => {
-        this.props.setTeam(e.target.title);
-        this.props.fetchPlayers()
+        e.preventDefault();
+        const { target: { title, team }} = e;
+        this.props.setTeam(title);
+        this.props.fetchPlayers(title); // This is what I'm not sure about, but I'll get to that later
+        console.log(title, team, e.target.dataset.team)
+        this.setState({ currentTeam: e.target.dataset.team });
     };
 
     render() {
         return (
             <Container>
                 <Row>
-                    <DropdownButton id="dropdown-player-button" title={this.props.team}>
+                    <Dropdown id="dropdown-player-button" title={this.props.team}>
+                      <Dropdown.Toggle>
+                        {this.state.currentTeam}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
                           {this.state.data.map(team => (
                             <div key={team}>
-                                <Dropdown.Item onClick={this.handleTeamSelection} title={team.name}>{team.name}</Dropdown.Item>
+                                <Dropdown.Item onClick={this.handleTeamSelection} title={team.id} data-team={team.name}>{team.name}</Dropdown.Item>
                             </div>
                         ))}
-                    </DropdownButton>
+                      </Dropdown.Menu>
+                    </Dropdown>
                 </Row>
             </Container>
         )
