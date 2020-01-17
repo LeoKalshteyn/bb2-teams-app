@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 
 import TeamsReducer from './reducers/TeamsReducer';
 import PlayersReducer from './reducers/PlayersReducer';
+import StarPlayersReducer from './reducers/StarPlayersReducer';
 
 import { Provider } from 'react-redux';
 import {applyMiddleware, createStore, compose, combineReducers } from 'redux';

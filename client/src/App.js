@@ -11,6 +11,9 @@ import TeamFilter from "./components/TeamFilter";
 import PlayerDisplay from "./components/PlayerDisplay";
 import PlayerFilter from "./components/PlayerFilter";
 
+import StarPlayerDisplay from "./components/StarPlayerDisplay";
+import StarPlayerFilter from "./components/StarPlayerFilter";
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,6 +32,10 @@ const App = props => {
 
                 <Route path="/players/:id">
                     <PlayerDisplay info={props.info} />
+                </Route>
+
+                <Route path="/star_players/:id">
+                    <StarPlayerDisplay info={props.info} />
                 </Route>
 
                 <Route path="/teams">
@@ -56,6 +63,9 @@ const App = props => {
                 </Route>
 
                 <Route path="/star_players">
+                    <Row>
+                        <Col><StarPlayerFilter path="star_players" /></Col>
+                    </Row>
                     <Row>
                         <NavButtonsContainer />
                     </Row>

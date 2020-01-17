@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import TeamCard from '../components/TeamCard'
 import PlayerCard from '../components/PlayerCard';
+import StarPlayerCard from '../components/StarPlayerCard';
 
 import CardColumns from 'react-bootstrap/CardColumns'
 
@@ -19,6 +20,11 @@ class DataContainer extends Component {
           case "players":
               return (this.props.players.cards.map(card => (
                   <NavLink style={{ color: "black" }} to={`/players/${card.id}`} key={card.id}><PlayerCard info={card} /></NavLink>
+              )));
+
+          case "star players":
+              return (this.props.players.cards.map(card => (
+                  <NavLink style={{ color: "black" }} to={`/star_players/${card.id}`} key={card.id}><StarPlayerCard info={card} /></NavLink>
               )));
 
           default:
@@ -39,6 +45,7 @@ class DataContainer extends Component {
       return {
           teams: state.teams,
           players: state.players
+          star_players: state.star_players
       }
   };
 
