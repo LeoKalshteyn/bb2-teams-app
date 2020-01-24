@@ -28,3 +28,20 @@ export const fetchStarPlayers = teamId => {
             })
     }
 };
+
+export const displayObject = (id, category, type) => {
+    return dispatch => {
+        const data = { id };
+        fetch(`/api/${category}/show`, {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(responseJSON => { dispatch({ type , object: responseJSON})
+            })
+    }
+};

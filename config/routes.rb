@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   scope '/api' do
+
+    post "teams/show", to: 'teams#show'
+
     resources :teams do
       resources :players
       resources :star_players
