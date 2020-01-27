@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 const PlayerCard = props => {
 
     const handleClick = () => {
-        props.view(props.info.id, 'DISPLAY_PLAYERS');
+        props.view(props.info.id, "players", 'DISPLAY_PLAYERS');
     };
 
     return (

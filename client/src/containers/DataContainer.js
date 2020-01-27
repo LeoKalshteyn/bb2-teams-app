@@ -6,6 +6,8 @@ import TeamCard from '../components/TeamCard'
 import PlayerCard from '../components/PlayerCard';
 import StarPlayerCard from '../components/StarPlayerCard';
 import { displayObject } from '../actions/dataActions'
+import { displayPlayerObject } from '../actions/dataActions'
+
 
 import CardColumns from 'react-bootstrap/CardColumns'
 
@@ -20,12 +22,12 @@ class DataContainer extends Component {
 
           case "players":
               return (this.props.players.cards.map(card => (
-                  <NavLink style={{ color: "black" }} to={`/players/${card.id}`} key={card.id}><PlayerCard view={this.props.displayObject} info={card} /></NavLink>
+                  <NavLink style={{ color: "black" }} to={`/players/${card.id}`} key={card.id}><PlayerCard view={this.props.displayPlayerObject} info={card} /></NavLink>
               )));
 
           case "star_players":
               return (this.props.star_players.cards.map(card => (
-                  <NavLink style={{ color: "black" }} to={`/star_players/${card.id}`} key={card.id}><StarPlayerCard view={this.props.displayObject} info={card} /></NavLink>
+                  <NavLink style={{ color: "black" }} to={`/star_players/${card.id}`} key={card.id}><StarPlayerCard view={this.props.displayPlayerObject} info={card} /></NavLink>
               )));
 
           default:
@@ -52,7 +54,8 @@ class DataContainer extends Component {
 
   const mapDispatchToProps = dispatch => {
       return {
-          displayObject: (id, category, type) => dispatch(displayObject(id, category, type))
+          displayObject: (id, category, type) => dispatch(displayObject(id, category, type)),
+          displayPlayerObject: (id, type) => dispatch(displayPlayerObject(id, type))
       }
   };
 

@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    Team.find_by(id: params[:id])
+    Team.find(params[:id])
     render json: @team, status: 200
   end
 

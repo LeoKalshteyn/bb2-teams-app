@@ -21,6 +21,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
+import Jumbotron from './components/Jumbotron'
+
 const App = props => {
   return (
     <Container>
@@ -39,6 +41,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/teams">
+                    <Jumbotron/>
                     <Row>
                         <Col><TeamFilter path="teams" /></Col>
                     </Row>
@@ -51,6 +54,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/players">
+                    <Jumbotron/>
                     <Row>
                         <Col><PlayerFilter path="players" /></Col>
                     </Row>
@@ -63,6 +67,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/star_players">
+                    <Jumbotron/>
                     <Row>
                         <Col><StarPlayerFilter path="star_players" /></Col>
                     </Row>
@@ -75,6 +80,7 @@ const App = props => {
                 </Route>
 
                 <Route path="/">
+                       <Jumbotron/>
                        <NavButtonsContainer />
                 </Route>
             </Switch>

@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
   end
 
   def show
+    Player.find(params[:id])
     render json: @player, status: 200
   end
 
