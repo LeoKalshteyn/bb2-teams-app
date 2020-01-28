@@ -29,14 +29,17 @@ const App = props => {
         <Router>
             <Switch>
                 <Route path="/teams/:id">
+                    <Jumbotron/>
                     <TeamDisplay info={props.info} />
                 </Route>
 
                 <Route path="/players/:id">
+                    <Jumbotron/>
                     <PlayerDisplay info={props.info} />
                 </Route>
 
                 <Route path="/star_players/:id">
+                    <Jumbotron/>
                     <StarPlayerDisplay info={props.info} />
                 </Route>
 
