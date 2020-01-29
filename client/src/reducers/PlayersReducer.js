@@ -20,7 +20,7 @@ export default function PlayersReducer(state = {
         case 'DISPLAY_PLAYERS':
             return {
                 ...state,
-                player_object: action.player_object,
+                object: action.object,
                 loading: false
             };
 

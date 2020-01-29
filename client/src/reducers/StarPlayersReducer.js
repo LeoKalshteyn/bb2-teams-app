@@ -20,7 +20,7 @@ export default function StarPlayersReducer(state = {
         case 'DISPLAY_STAR_PLAYERS':
             return {
                 ...state,
-                piece: action.piece,
+                object: action.object,
                 loading: false
             };
 

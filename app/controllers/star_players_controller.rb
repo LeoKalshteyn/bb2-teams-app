@@ -7,6 +7,7 @@ class StarPlayersController < ApplicationController
   end
 
   def show
+    StarPlayer.find(params[:id])
     render json: @star_player, status: 200
   end
 

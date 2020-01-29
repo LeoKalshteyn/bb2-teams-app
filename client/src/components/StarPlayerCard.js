@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 const StarPlayerCard = props => {
 
     const handleClick = () => {
-        props.view(props.info.id, 'DISPLAY_STAR_PLAYERS');
+        props.view(props.info.id, "star_players", 'DISPLAY_STAR_PLAYERS');
     };
 
     return (

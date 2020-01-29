@@ -1,14 +1,22 @@
 import React from 'react';
+
 import { connect } from 'react-redux'
 
 const PlayerDisplay = props => {
     const info = props.info
 
-    const displayPlayerObject = () => {
+    const displayObject = () => {
         if (info) {
             return (
                 <div>
                     <h1>{info.name}</h1>
+                    <h2>Player Type: {info.player_type}</h2>
+                    <h2>Cost: {info.cost}</h2>
+                    <h2>Movement Allowance: {info.movement_allowance}</h2>
+                    <h2>Strength: {info.strength}</h2>
+                    <h2>Agility: {info.agility}</h2>
+                    <h2>Armour Value: {info.armour_value}</h2>
+                    <h2>Skills: {info.skills}</h2>
                 </div>
             )
         }
@@ -20,7 +28,7 @@ const PlayerDisplay = props => {
 
     return (
         <div>
-            {displayPlayerObject()}
+            {displayObject()}
         </div>
     )
 };
@@ -28,7 +36,7 @@ const PlayerDisplay = props => {
 
 const mapStateToProps = state => {
     return {
-        info: state.players.player_object
+        info: state.players.object
     }
 };
 

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   scope '/api' do
 
     post "teams/show", to: 'teams#show'
-    post "teams/:team_id/players/show", to: 'players#show'
+    post "players/show", to: 'players#show'
+    post "star_players/show", to: 'star_players#show'
+  #  post "teams/:team_id/players/:id/show", to: 'players#show'
 
     resources :teams do
       resources :players
