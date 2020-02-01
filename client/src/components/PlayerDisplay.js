@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { connect } from 'react-redux'
+
+import Card from 'react-bootstrap/Card'
 
 const PlayerDisplay = props => {
     const info = props.info
@@ -9,14 +10,18 @@ const PlayerDisplay = props => {
         if (info) {
             return (
                 <div>
-                    <h1>{info.name}</h1>
-                    <h2>Player Type: {info.player_type}</h2>
-                    <h2>Cost: {info.cost}</h2>
-                    <h2>Movement Allowance: {info.movement_allowance}</h2>
-                    <h2>Strength: {info.strength}</h2>
-                    <h2>Agility: {info.agility}</h2>
-                    <h2>Armour Value: {info.armour_value}</h2>
-                    <h2>Skills: {info.skills}</h2>
+                  <Card border="dark" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title>{info.name}</Card.Title>
+                        <Card.Text>Player Type: {info.player_type}</Card.Text>
+                        <Card.Text>Cost: {info.cost}</Card.Text>
+                        <Card.Text>Movement Allowance: {info.movement_allowance}</Card.Text>
+                        <Card.Text>Strength: {info.strength}</Card.Text>
+                        <Card.Text>Agility: {info.agility}</Card.Text>
+                        <Card.Text>Armour Value: {info.armour_value}</Card.Text>
+                        <Card.Text>Skills: {info.skills}</Card.Text>
+                    </Card.Body>
+                  </Card>
                 </div>
             )
         }
