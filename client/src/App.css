@@ -21,6 +21,37 @@ body {
   1px 1px 0 #000;
 }
 
+#team-show-button {
+  padding: 12px 24px;
+  border: 2px solid #AE0C00;
+  border-radius: 4px;
+  color: #efefef;
+  background-color: #AE0C00;
+  font-size: 16px;
+  margin-left:120px;
+}
+
+#category-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 2px solid #AE0C00;
+  border-radius: 4px;
+  color: #efefef;
+  background-color: #AE0C00;
+  font-size: 16px;
+  margin-left:120px;
+}
+
+#dropdown-button {
+  padding: 12px 24px;
+  border: 2px solid #AE0C00;
+  border-radius: 4px;
+  color: #efefef;
+  background-color: #AE0C00;
+  font-size: 16px;
+  margin-left:120px;
+}
+
 .App-link {
   color: #61dafb;
 }

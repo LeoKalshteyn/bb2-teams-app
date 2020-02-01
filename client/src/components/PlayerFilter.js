@@ -36,7 +36,7 @@ class PlayerFilter extends Component {
             <Container>
                 <Row>
                     <Dropdown id="dropdown-player-button" title={this.props.team}>
-                      <Dropdown.Toggle>
+                      <Dropdown.Toggle id="dropdown-button">
                         {this.state.currentTeam}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>

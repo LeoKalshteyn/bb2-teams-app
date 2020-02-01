@@ -13,7 +13,7 @@ const TeamCard = props => {
             <Card.Body>
                 <Card.Title>{props.info.name}</Card.Title>
             </Card.Body>
-            <Card.Img variant="bottom" src={props.info.image} />
+            <Card.Img variant="bottom" style={{ height: '12rem' }} src={props.info.image} />
         </Card>
     )
 }
