@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTeams } from ".././actions/dataActions";
 
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 class TeamFilter extends Component {
   constructor() {
@@ -16,13 +18,16 @@ class TeamFilter extends Component {
 
     render() {
       return (
-
-        <div>
-            <button onClick={this.handleTeamFetch}>Show All Teams</button>
-                {this.state.teams.map(team => {
-                    return <div key={team.id}></div>
-                })}
-        </div>
+        <Container>
+            <Row>
+              <div>
+                  <button id="team-show-button" title="Show All Teams" onClick={this.handleTeamFetch}>Show All Teams</button>
+                      {this.state.teams.map(team => {
+                          return <div key={team.id}></div>
+                      })}
+              </div>
+            </Row>
+        </Container>
         )
       }
 

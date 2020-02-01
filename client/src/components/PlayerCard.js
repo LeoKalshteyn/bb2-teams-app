@@ -9,7 +9,7 @@ const PlayerCard = props => {
     };
 
     return (
-        <Card onClick={handleClick} style={{ width: '18rem' }}>
+        <Card border="dark" onClick={handleClick} style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>{props.info.name}</Card.Title>
                 <Card.Text>Player Type: {props.info.player_type}</Card.Text>
