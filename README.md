@@ -1,24 +1,12 @@
-# README
+# Blood Bowl 2 Teams
+This is an app that lets you browse all of the teams, players and star players that exist in the game Blood Bowl 2 along with their unique stats and information. The Frontend was built with JavaScript(using React and Redux) and a backend with Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ ## Installation
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Clone this repo
+- Navigate to the directory with `cd bb2-teams-app`
+- Run `npm install`
+- Run `bundle install`
+- Run `rake db:create` then `rake db:migrate`
+- Run `rake db:seed`
+- Run `rake start`
