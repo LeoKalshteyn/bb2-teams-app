@@ -1,3 +1,5 @@
+// stateless component that handles the card layout of players
+
 import React from 'react';
 
 import Card from 'react-bootstrap/Card'

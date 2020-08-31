@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20200206050826_add_views_to_team.rb

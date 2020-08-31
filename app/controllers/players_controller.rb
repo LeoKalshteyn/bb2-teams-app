@@ -7,8 +7,10 @@ class PlayersController < ApplicationController
   end
 
   def show
-    Player.find(params[:id])
-    render json: @player, status: 200
+    record = Player.find(params[:id])
+    views = record.views
+    record.update(views: views + 1)
+    render status: 200, json: record
   end
 
   private

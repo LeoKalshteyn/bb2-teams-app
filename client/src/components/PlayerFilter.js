@@ -18,16 +18,17 @@ class PlayerFilter extends Component {
       this.setState({ data: json });
     }
 
+    //  method which calls the fetchButtonTeams's setState method to change the state and update data
     componentDidMount(){
       this.fetchButtonTeams()
     }
 
     handleTeamSelection = e => {
         e.preventDefault();
-        const { target: { title, team }} = e;
+        const { target: { title }} = e;
         this.props.setTeam(title);
         this.props.fetchPlayers(title);
-        console.log(title, team, e.target.dataset.team)
+    //    console.log(title, team, e.target.dataset.team)
         this.setState({ currentTeam: e.target.dataset.team });
     };
 
@@ -53,19 +54,21 @@ class PlayerFilter extends Component {
     }
 }
 
+// returns team's players of the current state of component
 const mapStateToProps = state => {
     return {
         team: state.players.team
     }
 };
 
+//  directs the dispatching of an action by pointing it to an action creator
 const mapDispatchToProps = dispatch => {
     return {
         fetchPlayers: params => dispatch(fetchPlayers(params)),
         fetchTeams: params => dispatch(fetchTeams(params)),
         setTeam: team => dispatch({ type: "SET_TEAM", team })
-
     }
 };
 
+// connects PlayerFilter to the store, and dispatch an action to the store to update the state
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerFilter)

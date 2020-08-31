@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_001005) do
+ActiveRecord::Schema.define(version: 2020_02_08_054819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_001005) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "team_id"
+    t.integer "views", default: 0
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_001005) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "team_id"
+    t.integer "views", default: 0
     t.index ["team_id"], name: "index_star_players_on_team_id"
   end
 
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_001005) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "views", default: 0
   end
 
   add_foreign_key "players", "teams"

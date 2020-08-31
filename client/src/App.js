@@ -15,6 +15,9 @@ import StarPlayerDisplay from "./components/StarPlayerDisplay";
 import StarPlayerFilter from "./components/StarPlayerFilter";
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// BrowserRouter is the router implementation for HTML5 browsers (vs Native).
+// Route is the conditionally shown component based on matching a path to a URL.
+// Switch returns only the first matching route rather than all matching routes.
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
@@ -95,7 +98,7 @@ const App = props => {
 
 const mapStateToProps = state => {
     return {
-        info: state.piece
+        info: state.object
     }
 };
 

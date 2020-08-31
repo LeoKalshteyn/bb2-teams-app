@@ -15,6 +15,7 @@ const TeamDisplay = props => {
                     <Card.Title>{info.name}</Card.Title>
                   </Card.Body>
                     <Card.Img variant="bottom" src={info.image} />
+                    <Card.Text>Views: {info.views}</Card.Text>
                 </Card>
                 </div>
             )

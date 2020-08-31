@@ -24,10 +24,9 @@ class StarPlayerFilter extends Component {
 
     handleTeamSelection = e => {
         e.preventDefault();
-        const { target: { title, team }} = e;
+        const { target: { title }} = e;
         this.props.setTeam(title);
         this.props.fetchStarPlayers(title);
-        console.log(title, team, e.target.dataset.team)
         this.setState({ currentTeam: e.target.dataset.team });
     };
 
@@ -64,7 +63,6 @@ const mapDispatchToProps = dispatch => {
         fetchStarPlayers: params => dispatch(fetchStarPlayers(params)),
         fetchTeams: params => dispatch(fetchTeams(params)),
         setTeam: team => dispatch({ type: "SET_TEAM", team })
-
     }
 };
 

@@ -1,13 +1,28 @@
+// Thunk allows action creators to return functions. The inner function can receive the store methods dispatch and getState as parameters
 
 export const fetchTeams = () => {
+    console.log('c')
     return (dispatch) => {
         dispatch({ type: 'LOADING_TEAMS'});
         fetch(`/api/teams`)
             .then(res => res.json())
-            .then(responseJSON => { dispatch({ type: 'ADD_TEAMS', cards: responseJSON})
+            .then(responseJSON => {
+              console.log('d')
+              dispatch({ type: 'ADD_TEAMS', cards: responseJSON})
             })
     }
+    console.log('e')
 };
+
+// export const sortTeams = () => {
+//     return (dispatch) => {
+//         dispatch({ type: 'LOADING_TEAMS'});
+//         fetch(`/api/teams`)
+//             .then(res => res.json())
+//             .then(responseJSON => { dispatch({ type: 'SORT_TEAMS', cards: responseJSON})
+//             })
+//     }
+// };
 
 export const fetchPlayers = teamId => {
     return dispatch => {

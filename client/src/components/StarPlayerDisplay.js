@@ -20,6 +20,7 @@ const StarPlayerDisplay = props => {
                         <Card.Text>Agility: {info.agility}</Card.Text>
                         <Card.Text>Armour Value: {info.armour_value}</Card.Text>
                         <Card.Text>Skills: {info.skills}</Card.Text>
+                        <Card.Text>Views: {info.views}</Card.Text>
                     </Card.Body>
                   </Card>
                 </div>

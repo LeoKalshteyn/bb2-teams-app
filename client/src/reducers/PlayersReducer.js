@@ -7,21 +7,18 @@ export default function PlayersReducer(state = {
         case 'LOADING_PLAYERS':
             return {
                 ...state,
-                loading: true
             };
 
         case 'ADD_PLAYERS':
             return {
                 ...state,
                 cards: action.cards,
-                loading: false
             };
 
         case 'DISPLAY_PLAYERS':
             return {
                 ...state,
                 object: action.object,
-                loading: false
             };
 
         case 'SET_TEAM':

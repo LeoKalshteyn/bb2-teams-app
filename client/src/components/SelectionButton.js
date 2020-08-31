@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 
-class SelectionButton extends Component {
+const SelectionButton = props => {
 
-    render() {
-        const name = this.props.name.toLowerCase();
+        const name = props.name.toLowerCase();
         return (
-            <NavLink to={`/${name}`} activeStyle={{ disabled: true }} id={name}><Button id="category-button">{this.props.name}</Button></NavLink>
+            <NavLink to={`/${name}`} activeStyle={{ disabled: true }} id={name}><Button id="category-button">{props.name}</Button></NavLink>
         )
     }
-}
+
 
 export default SelectionButton
