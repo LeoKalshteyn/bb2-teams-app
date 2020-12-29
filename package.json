@@ -1,48 +1,23 @@
 {
   "name": "bb2-teams-app",
-  "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001/",
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.3",
-    "@testing-library/user-event": "^7.1.2",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0",
-    "react-redux": "^7.1.3",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^5.0.0"
-  },
-  "engines": {
-    "node": ">= 6.9.4",
-    "npm": ">= 4.4.0"
+  "version": "1.0.0",
+  "description": "This is an app that lets you browse all of the teams, players and star players that exist in the game Blood Bowl 2 along with their unique stats and information. The Frontend was built with JavaScript(using React and Redux) and a backend with Ruby on Rails.",
+  "main": "client/src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gorgutzz/bb2-teams-app.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gorgutzz/bb2-teams-app/issues"
+  },
+  "homepage": "https://github.com/Gorgutzz/bb2-teams-app#readme"
 }
